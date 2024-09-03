@@ -1,10 +1,11 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity, Pressable } from 'react-native';
 import { Link } from 'expo-router';
+import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 
 const Visa1: React.FC = () => {
   return (
-    <View style={styles.container}>
+    <ScrollView style={styles.container}>
       <View style={styles.header}>
         <Link href="../" asChild>
           <Pressable style={styles.backButton}>
@@ -35,7 +36,7 @@ const Visa1: React.FC = () => {
           <Text>Next Page</Text>
         </Pressable>
       </Link>
-    </View>
+    </ScrollView>
   );
 };
 
