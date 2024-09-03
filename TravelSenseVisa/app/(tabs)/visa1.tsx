@@ -1,34 +1,22 @@
-// Visa1.tsx
 import React from 'react';
-import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
-import { StackNavigationProp } from '@react-navigation/stack';
-import { useNavigation } from '@react-navigation/native';
-
-// Define your stack param list
-type RootStackParamList = {
-  Visa1: undefined; // No params for Visa1
-  Visa2: undefined; // No params for Visa2
-  Profile: undefined; // Added Profile screen
-};
-
-// Define navigation prop type for Visa1
-type Visa1NavigationProp = StackNavigationProp<RootStackParamList, 'Visa1'>;
+import { View, Text, Image, StyleSheet, TouchableOpacity, Pressable } from 'react-native';
+import { Link } from 'expo-router';
 
 const Visa1: React.FC = () => {
-  const navigation = useNavigation<Visa1NavigationProp>();
-
   return (
     <View style={styles.container}>
       <View style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.goBack()} style={styles.backButton}>
-          <Text>Back</Text>
-        </TouchableOpacity>
-        <Image
-          source={require('@/assets/images/Visaapproved.png')}
-        />
-        <TouchableOpacity onPress={() => navigation.navigate('Profile')} style={styles.profileButton}>
-          <Text>Profile</Text>
-        </TouchableOpacity>
+        <Link href="../" asChild>
+          <Pressable style={styles.backButton}>
+            <Text>Back</Text>
+          </Pressable>
+        </Link>
+        
+        <Link href="/profile" asChild>
+          <Pressable style={styles.profileButton}>
+            <Text>Profile</Text>
+          </Pressable>
+        </Link>
       </View>
 
       <Text style={styles.text}>Welcome to Visa1 Page</Text>
@@ -42,10 +30,11 @@ const Visa1: React.FC = () => {
         </View>
       </View>
 
-      <Button
-        title="Next Page"
-        onPress={() => navigation.navigate('Visa2')}
-      />
+      <Link href="/visa2" asChild>
+        <Pressable style={styles.nextButton}>
+          <Text>Next Page</Text>
+        </Pressable>
+      </Link>
     </View>
   );
 };
@@ -87,6 +76,12 @@ const styles = StyleSheet.create({
     shadowOffset: { width: 0, height: 2 },
     shadowOpacity: 0.1,
     shadowRadius: 4,
+  },
+  nextButton: {
+    padding: 10,
+    backgroundColor: '#007bff',
+    borderRadius: 5,
+    alignItems: 'center',
   },
 });
 
