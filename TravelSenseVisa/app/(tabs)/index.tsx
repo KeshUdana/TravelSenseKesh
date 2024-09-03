@@ -1,8 +1,7 @@
 import { Image, StyleSheet, Platform } from 'react-native';
 
 import ParallaxScrollView from '@/components/ParallaxScrollView';
-import { ThemedText } from '@/components/ThemedText';
-import { ThemedView } from '@/components/ThemedView';
+
 
 export default function HomeScreen() {
   return (
@@ -30,7 +29,7 @@ const styles = StyleSheet.create({
   },
   reactLogo: {
     height: 178,
-    width: 290,
+    width: 350,
     bottom: 0,
     left: 0,
     position: 'absolute',
