@@ -8,8 +8,7 @@ import { useNavigation } from '@react-navigation/native';
 type RootStackParamList = {
   Visa1: undefined; // No params for Visa1
   Visa2: undefined; // No params for Visa2
-  Profile:undefined;
-  // Add other routes here
+  Profile: undefined; // Added Profile screen
 };
 
 // Define navigation prop type for Visa1
@@ -32,9 +31,7 @@ const Visa1: React.FC = () => {
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.text}>
-        Welcome to Visa1 Page
-      </Text>
+      <Text style={styles.text}>Welcome to Visa1 Page</Text>
 
       <View style={styles.cards}>
         <View style={styles.card}>

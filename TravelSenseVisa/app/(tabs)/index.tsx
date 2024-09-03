@@ -15,10 +15,7 @@ export default function App() {
         <Stack.Screen name="Visa1" component={Visa1} />
         <Stack.Screen name="Visa2" component={Visa2} />
         <Stack.Screen name="Profile" component={Profile} />
-
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
-
-
