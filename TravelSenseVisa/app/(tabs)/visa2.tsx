@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, StyleSheet, Button, TouchableOpacity, Image } from 'react-native';
+import { View, Text,ScrollView, TextInput, StyleSheet, Button, TouchableOpacity, Image } from 'react-native';
 import { Link } from 'expo-router';
 import { Picker } from '@react-native-picker/picker';
 import DateTimePicker from '@react-native-community/datetimepicker';
 import * as ImagePicker from 'expo-image-picker';
-import { ScrollView } from 'react-native-reanimated/lib/typescript/Animated';
 
 const Visa2: React.FC = () => {
   const [selectedGender, setSelectedGender] = useState('male');
