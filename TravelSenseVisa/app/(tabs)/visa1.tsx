@@ -1,11 +1,22 @@
 // Visa1.tsx
 import React from 'react';
 import { View, Text, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import { StackNavigationProp } from '@react-navigation/stack';
 import { useNavigation } from '@react-navigation/native';
 
+// Define your stack param list
+type RootStackParamList = {
+  Visa1: undefined; // No params for Visa1
+  Visa2: undefined; // No params for Visa2
+  Profile:undefined;
+  // Add other routes here
+};
+
+// Define navigation prop type for Visa1
+type Visa1NavigationProp = StackNavigationProp<RootStackParamList, 'Visa1'>;
 
 const Visa1: React.FC = () => {
-  const navigation = useNavigation();
+  const navigation = useNavigation<Visa1NavigationProp>();
 
   return (
     <View style={styles.container}>
@@ -35,7 +46,7 @@ const Visa1: React.FC = () => {
       </View>
 
       <Button
-        title="Get Approval"
+        title="Next Page"
         onPress={() => navigation.navigate('Visa2')}
       />
     </View>
@@ -43,52 +54,43 @@ const Visa1: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-    container: {
-      flex: 1,
-      padding: 20,
-      backgroundColor: '#fff',
-    },
-    header: {
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      alignItems: 'center', // Added for proper alignment
-    },
-    backButton: {
-      // Define your styles for backButton here
-      padding: 10,
-    },
-    profileButton: {
-      // Define your styles for profileButton here
-      padding: 10,
-    },
-    text: {
-      // Define your styles for text here
-      fontSize: 18,
-      fontWeight: 'bold',
-      marginVertical: 20,
-    },
-    cards: {
-      // Define your styles for cards container here
-      flexDirection: 'row',
-      justifyContent: 'space-between',
-      marginVertical: 20,
-    },
-    card: {
-      // Define your styles for individual cards here
-      flex: 1,
-      padding: 10,
-      marginHorizontal: 5,
-      backgroundColor: '#f8f8f8',
-      borderRadius: 5,
-      shadowColor: '#000',
-      shadowOffset: { width: 0, height: 2 },
-      shadowOpacity: 0.1,
-      shadowRadius: 4,
-    },
-    Profile:{
+  container: {
+    flex: 1,
+    padding: 20,
+    backgroundColor: '#fff',
+  },
+  header: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+  },
+  backButton: {
+    padding: 10,
+  },
+  profileButton: {
+    padding: 10,
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginVertical: 20,
+  },
+  cards: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    marginVertical: 20,
+  },
+  card: {
+    flex: 1,
+    padding: 10,
+    marginHorizontal: 5,
+    backgroundColor: '#f8f8f8',
+    borderRadius: 5,
+    shadowColor: '#000',
+    shadowOffset: { width: 0, height: 2 },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+  },
+});
 
-    }
-  });
-
-  export default Visa1
-  
+export default Visa1;
