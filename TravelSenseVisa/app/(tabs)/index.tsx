@@ -4,7 +4,7 @@ import { Link } from 'expo-router';
 
 const Visa1: React.FC = () => {
   return (
-    <ScrollView contentContainerStyle={styles.container}>
+    <ScrollView contentContainerStyle={styles.container}
       <View style={styles.header}>
         <Link href="../" asChild>
           <Pressable style={styles.backButton}>
